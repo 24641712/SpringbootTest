@@ -24,8 +24,7 @@ public class FastJsonTest {
                 "{'name':'李四','age':'28'}]," +
                 "'result':'success'}";
         JSONObject jsonResult = JSONObject.parseObject(arr);
-        String jsonInfoString = jsonResult.getString("info");
-        JSONArray jsonArray = JSONArray.parseArray(jsonInfoString);
+        JSONArray jsonArray = jsonResult.getJSONArray("info");
         List<Student> students = jsonArray.toJavaList(Student.class);
         students.stream().forEach(e-> {System.out.println(e.getName());
             System.out.println(e.getAge());
