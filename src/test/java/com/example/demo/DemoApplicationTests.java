@@ -17,6 +17,7 @@ class DemoApplicationTests {
     @Test
     void contextLoads() {
 //        messagePublisher.publish("你好");
+
         log.info("hello world");
     }
 
