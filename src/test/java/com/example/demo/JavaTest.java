@@ -1,10 +1,15 @@
 package com.example.demo;
 
+import com.example.demo.mq.RocketMQProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 public class JavaTest {
@@ -30,6 +35,31 @@ public class JavaTest {
         }
 
     }
+
+    @Test
+    public void StringTest(){
+        String str = "20abc";
+        if(StringUtils.isEmpty(str)){
+            log.info("字符串为空");
+        }else {
+            log.info("字符串不为空");
+        }
+
+        log.info(StringUtils.delete(str,".*c"));
+        Pattern pattern = Pattern.compile(".*c");
+        Matcher matcher = pattern.matcher(str);
+
+        if(matcher.matches()){
+            log.info("匹配成功");
+        }else{
+            log.info("匹配失败");
+        }
+
+        log.info(str.replaceAll("^\\d*","def"));
+
+    }
+
+
 
 
 }
