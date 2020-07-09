@@ -16,9 +16,9 @@ import java.io.*;
  */
 public class OSSClients {
     //您的AccessKeyId
-    static String accessKeyId = "LTAI4GEmPZZLvxtaTQSm8ds7";
+    static String accessKeyId = "***";
     //您的AccessKeySecret
-    static String accessKeySecret = "AmvquSvLOJSj2YB9OdA5v5oJWf6tUA";
+    static String accessKeySecret = "***";
     //需要上传到VOD的本地视频文件的完整路径，需要包含文件扩展名
     static String uploadFile = "G:\\download.mp4";
     private static String bucketName = "ccl-video";

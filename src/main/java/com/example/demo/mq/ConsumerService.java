@@ -1,7 +1,6 @@
 package com.example.demo.mq;
 
 import com.alibaba.rocketmq.common.message.MessageExt;
-import org.springframework.beans.BeanUtils;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
