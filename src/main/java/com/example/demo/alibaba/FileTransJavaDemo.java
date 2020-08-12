@@ -121,7 +121,7 @@ public class FileTransJavaDemo {
         getRequest.setMethod(MethodType.GET);
         /**
          * 2. 提交录音文件识别结果查询请求
-         * 以轮询的方式进行识别结果的查询，直到服务端返回的状态描述为“SUCCESS”,或者为错误描述，则结束轮询。
+         * 以轮询的方式进行识别结果的查询，直到服务端返回的状态描述为"SUCCESS",或者为错误描述，则结束轮询。
          */
         String result = null;
         while (true) {
