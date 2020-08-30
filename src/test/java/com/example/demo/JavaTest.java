@@ -8,6 +8,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,6 +60,17 @@ public class JavaTest {
 
     }
 
+    @Test
+    public void integerTest(){
+        AtomicInteger atomicInteger = new AtomicInteger();
+        for(int i=0;i<1000;i++){
+            atomicInteger.incrementAndGet();
+        }
+        log.info(atomicInteger.get()+"");
+
+
+
+    }
 
 
 

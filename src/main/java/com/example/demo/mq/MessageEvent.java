@@ -1,7 +1,7 @@
 package com.example.demo.mq;
 
-import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
-import com.alibaba.rocketmq.common.message.MessageExt;
+import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
+import org.apache.rocketmq.common.message.MessageExt;
 import org.springframework.context.ApplicationEvent;
 
 import java.util.List;
@@ -21,8 +21,6 @@ public class MessageEvent extends ApplicationEvent {
         this.consumer = consumer;
         this.setMsgs(msgs);
     }
-
-
 
     public DefaultMQPushConsumer getConsumer() {
         return consumer;

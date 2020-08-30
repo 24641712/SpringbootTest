@@ -1,6 +1,6 @@
 spring:
   redis:
-    database: 3
+    database: 1
     pool: 6379
     host: localhost
     password:
@@ -10,3 +10,7 @@ spring:
         max-wait: -1
         max-idle: 8
         min-idle: 0
+
+rocketmq:
+  name-server: 127.0.0.1:9876
+

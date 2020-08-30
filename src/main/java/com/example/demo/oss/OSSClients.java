@@ -16,12 +16,13 @@ import java.io.*;
  */
 public class OSSClients {
     //您的AccessKeyId
-    static String accessKeyId = "***";
+    static String accessKeyId = "**";
     //您的AccessKeySecret
-    static String accessKeySecret = "***";
+    static String accessKeySecret = "**";
     //需要上传到VOD的本地视频文件的完整路径，需要包含文件扩展名
     static String uploadFile = "G:\\download.mp4";
     private static String bucketName = "ccl-video";
+//    地域节点(外网访问)
     private static String endpoint = "http://oss-cn-beijing.aliyuncs.com";
     private static String key = "v2/v21/download12.mp4";
 
