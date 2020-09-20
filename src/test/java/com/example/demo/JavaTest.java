@@ -39,24 +39,9 @@ public class JavaTest {
 
     @Test
     public void StringTest(){
-        String str = "20abc";
-        if(StringUtils.isEmpty(str)){
-            log.info("字符串为空");
-        }else {
-            log.info("字符串不为空");
-        }
+       final String str = "你好#0，我也好#1";
+        System.out.println(StringUtils.replace(str,"#0","123"));
 
-        log.info(StringUtils.delete(str,".*c"));
-        Pattern pattern = Pattern.compile(".*c");
-        Matcher matcher = pattern.matcher(str);
-
-        if(matcher.matches()){
-            log.info("匹配成功");
-        }else{
-            log.info("匹配失败");
-        }
-
-        log.info(str.replaceAll("^\\d*","def"));
 
     }
 
@@ -68,9 +53,8 @@ public class JavaTest {
         }
         log.info(atomicInteger.get()+"");
 
-
-
     }
+
 
 
 

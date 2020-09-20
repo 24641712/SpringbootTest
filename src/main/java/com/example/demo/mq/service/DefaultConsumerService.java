@@ -25,7 +25,7 @@ public class DefaultConsumerService {
         consumer = new DefaultMQPushConsumer("defaultGroup");
         consumer.setNamesrvAddr("localhost:9876");
         try {
-            consumer.subscribe("demo", "*");
+            consumer.subscribe("demo1", "*");
             consumer.registerMessageListener(new MessageListenerConcurrently() {
 
                 @Override

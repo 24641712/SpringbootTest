@@ -20,7 +20,7 @@ public class TransationConsumerService {
         //03设置获取原则
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         //04订阅
-        consumer.subscribe("demo","*");
+        consumer.subscribe("demo1","*");
         //05注册监听器
         consumer.registerMessageListener(new MessageListenerConcurrently() {
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,

@@ -2,7 +2,9 @@ package com.example.demo;
 
 //import com.example.demo.redis.mq.MessagePublisherImpl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.demo.mq.RocketMQProperties;
+import com.example.demo.mq.entity.User;
 import com.example.demo.mq.service.DefaultProducerService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -28,11 +30,16 @@ class DemoApplicationTests {
 
     @Test
     void test4(){
-        boolean result = defaultProducerService.send("demo", "TAG-A", "Hello RocketMQ_B_");
-        if(result){
-            log.info("B_{}消息发送成功");
-        }else{
-            log.info("B_{}消息发送失败");
+        for(int i=0;i<100;i++){
+            User user = new User(""+i, ""+i);
+
+            boolean result = defaultProducerService.send("demo", "TAG-A", JSONObject.toJSONString(user));
+            if(result){
+                log.info("B_{}消息发送成功");
+            }else{
+                log.info("B_{}消息发送失败");
+            }
+
         }
 
     }
