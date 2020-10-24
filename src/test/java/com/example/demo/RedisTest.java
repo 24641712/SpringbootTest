@@ -83,24 +83,25 @@ public class RedisTest {
 
         String key = (String) boundZSetOperations.getKey();
         boundZSetOperations.add("h", 8.0);
-        boundZSetOperations.add("h", 1.0);
-        boundZSetOperations.expire(-5, TimeUnit.SECONDS);
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        boundZSetOperations.incrementScore("h", -2.0);
+//        boundZSetOperations.expire(-5, TimeUnit.SECONDS);
+        System.out.println(boundZSetOperations.score("h"));
+        Set<String> typedTuples = boundZSetOperations.reverseRange(0, -1);
+        for(String typedTuple : typedTuples){
+            System.out.println(typedTuple);
+        }
 
-        boundZSetOperations.reverseRange(0, 1).stream().forEach(item->{
-            System.out.println(item);
-        });
 
-        log.info("当前用户g排行：{}", boundZSetOperations.reverseRank("f")+1);
+//        boundZSetOperations.reverseRange(0, -1).stream().forEach(item->{
+//            System.out.println(item);
+//        });
 
-        log.info("该排行榜中共有{}个用户", boundZSetOperations.size());
+//        log.info("当前用户g排行：{}", boundZSetOperations.reverseRank("f")+1);
 
-        double oldScore = boundZSetOperations.score("g");
-        double score = boundZSetOperations.incrementScore("g", 9.0-5.0);
+//        log.info("该排行榜中共有{}个用户", boundZSetOperations.size());
+
+//        double oldScore = boundZSetOperations.score("g");
+//        double score = boundZSetOperations.incrementScore("g", 9.0-5.0);
 //        boundZSetOperations.reverseRange(0,-1).forEach(v -> System.out.println("通过TypedTuple方式新增数据:" + v));
 
     }
